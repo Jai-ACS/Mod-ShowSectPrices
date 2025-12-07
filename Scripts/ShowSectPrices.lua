@@ -3,6 +3,7 @@ local Mod = GameMain:GetMod("Jai_ShowSectPrices")
 function Mod:OnInit()
 	local tbEventMod = GameMain:GetMod("_Event")
 	tbEventMod:RegisterEvent(g_emEvent.WindowEvent, self.OnWindowEvent, self)
+	xlua.private_accessible(CS.Wnd_SchoolTrade)
 end
 
 -- function ShowGridMoreInfoMod:OnRender(_)
@@ -25,7 +26,3 @@ function Mod:OnWindowEvent(pThing, pObjs)
 		)
 	end
 end
-
-
-
-
