@@ -3,7 +3,6 @@ local Mod = GameMain:GetMod("Jai_ShowSectPrices")
 function Mod:OnInit()
 	local tbEventMod = GameMain:GetMod("_Event")
 	tbEventMod:RegisterEvent(g_emEvent.WindowEvent, self.OnWindowEvent, self)
-	xlua.private_accessible(CS.Wnd_SchoolTrade)
 end
 
 -- function ShowGridMoreInfoMod:OnRender(_)
@@ -19,7 +18,7 @@ function Mod:OnWindowEvent(pThing, pObjs)
 		-- pWnd.UIInfo.m_friendpontvalue.y = pWnd.UIInfo.m_itemvalue.y - pWnd.UIInfo.m_friendpontvalue.actualHeight
 
 		self:showPrices(pWnd.UIInfo)
-		pWnd.UIInfo.m_n51.onClickItem:Add(
+		pWnd.UIInfo.m_n64.m_n63.onClickItem:Add(
 			function()
 				self:showPrices(pWnd.UIInfo)
 			end
@@ -32,3 +31,4 @@ function Mod:showPrices(uiInfo)
 	uiInfo.m_friendpontvalue.visible = true
 	uiInfo.m_friendpontvalue.y = uiInfo.m_itemvalue.y - uiInfo.m_friendpontvalue.actualHeight
 end
+
